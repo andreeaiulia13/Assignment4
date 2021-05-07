@@ -1,0 +1,27 @@
+!!!
+%html 
+  %head
+    %title Edit 
+
+  %body
+    .add-header
+      %h1 EDIT 
+    
+    .product-form
+      =form_with model: @product, local: true do |form|
+        =form.label :title     
+        =form.text_field :title
+       
+        =form.label :type_of_food
+        =form.text_field :description
+       
+        =form.label :price
+        =form.text_field :price, class: "price"
+       
+        =form.label :image
+        =form.file_field :image
+        
+        =form.submit :EDIT, class: 'submit-button'
+
+= link_to 'Back', dashboard_path, class: 'path'
+

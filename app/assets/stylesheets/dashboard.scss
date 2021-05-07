@@ -1,0 +1,99 @@
+.dashboard-header {
+  font-size: 25px;
+  margin: 40px;
+}
+
+.dashboard-table thead th {
+  font-size: 20px;
+  padding: 20px;	
+}
+
+.dashboard-table tbody td {
+  font-size: 20px;
+  text-align: center;
+}
+
+.options {
+  color: black;
+  padding: 10px;
+  text-decoration: none;
+}
+
+#show {
+  color: orange;
+}
+
+#edit {
+  color: green;
+}
+
+#destroy {
+  color: red;
+}
+
+.path {
+  color: black;
+  text-decoration: none;
+  padding: 15px;
+  display: block;
+  margin: 40px 1400px 10px 200px ;
+  border: solid black 0.5px;
+  text-align: center;
+}
+
+.product-form {
+  text-align: center;
+  margin: 10px 1400px 10px 200px;
+  font-size: 20px;
+  border: black solid 0.5px;
+  padding: 40px 20px;
+}
+
+.product-form text_field {
+  display: block;
+}
+
+.product-form label {
+  display: block;
+  padding: 10px;
+}
+
+.submit-button {
+  margin-top: 15px;
+  height: 40px;
+  width: 100px;
+}
+
+.add-header {
+  font-size: 15px;
+  margin: 30px;
+  padding-left: 170px;
+}
+
+.show {
+  margin: 50px 1400px 10px 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.show span {
+  padding-top: 10px;
+  padding-bottom: 5px;
+  font-size: 23px;
+}
+
+.show-image {
+  margin-top: 25px;
+  border: rgb(131, 129, 129) solid 0.6px;
+  border-radius: 10%;
+  object-fit: cover;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+  margin-left: 70px;
+}
+

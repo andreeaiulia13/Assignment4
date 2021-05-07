@@ -1,0 +1,23 @@
+!!!
+%html
+  %head
+    %title Show
+ 
+  %body
+    .show
+      %span Product ID:
+      = @product.id
+  
+      %span Dish Name:
+      = @product.title
+
+      %span Dish Type:
+      = @product.description
+ 
+      %span Price:
+      = @product.price.to_s + '$'
+
+      = image_tag @product.image, width: '400px', height: '400px', class: 'show-image'
+
+= link_to 'BACK', dashboard_path, class: 'path'
+
