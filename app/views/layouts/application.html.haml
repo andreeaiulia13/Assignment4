@@ -4,9 +4,10 @@
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title Assignment3
     %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
-    = csrf_meta_tags
-    = csp_meta_tag
-    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    =render 'layouts/rails_default'
   %body
+    =render 'layouts/header' 
+    -flash.each do |messages_type, message|
+      %div{:class => "alert alert-#{messages_type}"}= message
     = yield
+    =render 'layouts/footer'

@@ -1,3 +1,6 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
 * {
   font-family: 'Poppins', sans-serif;
 }
@@ -35,7 +38,7 @@ body {
 }
 
 .header { 
-  height: 450px;
+  height: 350px;
   background-image: url('/header.jpg');
   background-size: auto 100%;
   background-repeat: no-repeat;
@@ -71,18 +74,20 @@ body {
   padding: 10px 10px;   
 }
 
-.navigation ul li {
+.navigation ul li, .navigation {
   display: inline-block ;
   padding-top: 0.8em;
   padding-left: 1em;
   font-weight: bold;
   color: white;
+  text-decoration: none;
 }
 
-.navigation ul li:hover {
+.navigation ul li:hover, .navigation:hover {
   color: #c9cba3;
   transition: 0.35s ease-in-out;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .header-text h1 {
@@ -268,7 +273,7 @@ body {
 }
 
 .main-footer {
-  padding: 40px 0;
+  padding: 50px 0;
   background-color:#ffffff;
   color:#4b4c4d;
 }  
