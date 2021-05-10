@@ -1,17 +1,17 @@
 .selector
   %div
     %select
-      %option{:value => "category"} CATEGORY
+      %option{:value => 'category'} CATEGORY
     %select
-      %option{:value => "sorting"} SORTING
+      %option{:value => 'sorting'} SORTING
     %select
-      %option{:value => "vegetarian"} VEGETARIAN
+      %option{:value => 'vegetarian'} VEGETARIAN
       
   %div
-    %label.slider-price{:for => "slider"} Price:
-    $9
-    %input.slider{:max => "100", :min => "15", :name => "price", :type => "range"}/
-    $50
+    %label.slider-price{:for => 'slider'} Price:
+    .slider-price $9
+    %input.slider{:max => '100', :min => '15', :name => 'price', :type => 'range'}
+    .slider-price $50
         
 %main.products-main
   - @products.each do |product|
@@ -21,7 +21,5 @@
       .food-type= product.description
       .food-price= product.price.to_s + ' $'       
       .add-button{:href => "#"} ADD TO CART 
-      %end 
     
-= link_to 'Edit products', dashboard_path, class: "add-link"
     

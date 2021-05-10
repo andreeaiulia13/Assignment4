@@ -1,27 +1,35 @@
 @mixin box_sizing {
-	-moz-box-sizing:border-box;
+	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	box-sizing:border -box;
-	}
+}
 
 input, textarea, select, .uneditable-input {
 	border: 1px solid #bbb;
 	width: 100%;
 	margin-bottom: 15px;
 	@include box_sizing;
-	}
+}
+
 input {
 	height: auto !important;
 }
+
 .submit-user-btn {
-	background-color:#b95814; 
+	margin-top: 20px;
+	background-color: #b95814; 
 	color: white;
 	padding: 15px 0px;
 }
 
+.submit-user-btn:active {
+  background-color: #c2743d;
+}
+
 #error_explanation {
   color: red;
-  ul {
+  
+	ul {
     color: red;
     margin: 0 0 30px 0;
   }
@@ -29,9 +37,28 @@ input {
 
 #error_explanation {
   color: red;
-  ul {
+  
+	ul {
     color: red;
     margin: 0 0 30px 0;
   }
 }
 
+.signup-login-header {
+	text-align: center;
+	margin-top: 50px;
+}
+
+.signup-link {
+  color: #b95814;
+}
+
+.signup-link:hover {
+	color: #238826;
+}
+
+.profile {
+	text-align: center;
+	margin-top: 100px;
+	font-size: 30px;
+}

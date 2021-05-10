@@ -1,26 +1,28 @@
 .header
   .logo-nav
     .logo
-      %img{:alt => "Eureka logo", :src => "/logo1.png"}/
+      %img{:alt => "Eureka logo", :src => '/logo1.png'}/
       %p#eureka Eureka Bistro
         
     %nav.navigation
       %ul
-        %li=link_to 'HOME', root_path, class: "navigation"
+        %li=link_to 'HOME', root_path, class: 'navigation-text'
         %li ABOUT
+
         - if logged_in?
           %li.dropdown
-            %a.navigation.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+            %a.navigation-text.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
               ACCOUNT 
               %b.caret
             %ul.dropdown-menu
               %li=link_to "Profile", current_user
+              %li=link_to "Edit products", dashboard_path
               %li=link_to "Settings", '#'
               %li.divider
               %li
-                =link_to "Log out", logout_path, method: :delete
+                =link_to 'Log out', logout_path, method: :delete
         - else
-          %li= link_to "LOG IN", login_path
+          %li= link_to "LOG IN", login_path, class: 'navigation-text'
     
         %a#cart-logo{:href => "#", :onclick => "openForm()"}
           
