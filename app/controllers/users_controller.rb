@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     if @user.save
       reset_session
       log_in @user
-      flash[:success] = 'Welcome to the Sample App!'
+      flash[:success] = 'Welcome to the Eureka Food Ordering System!'
       
       redirect_to @user
     else
