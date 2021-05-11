@@ -11,20 +11,20 @@
 
         - if logged_in?
           %li.dropdown
-            %a.navigation-text.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+            %a.navigation-text.dropdown-toggle{'data-toggle' => 'dropdown', :href => "#"}
               ACCOUNT 
               %b.caret
             %ul.dropdown-menu
-              %li=link_to "Profile", current_user
-              %li=link_to "Edit products", dashboard_path
-              %li=link_to "Settings", '#'
+              %li=link_to 'Profile', current_user
+              %li=link_to 'Edit products', dashboard_path
+              %li=link_to 'Settings', '#'
               %li.divider
               %li
                 =link_to 'Log out', logout_path, method: :delete
         - else
-          %li= link_to "LOG IN", login_path, class: 'navigation-text'
+          %li= link_to 'LOG IN', login_path, class: 'navigation-text'
     
-        %a#cart-logo{:href => "#", :onclick => "openForm()"}
+        %a#cart-logo{:href => '#', :onclick => 'openForm()'}
           
   .header-text
     %h1 Ordering Food

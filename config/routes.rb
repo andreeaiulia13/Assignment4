@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
   root 'products#index'
 
+  get 'sessions/new'
+  
   resources :products
   get 'dashboard' => 'products#dashboard'
   get 'new_error_product' => 'products#new_error'
