@@ -1,3 +1,6 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
 * {
   font-family: 'Poppins', sans-serif;
 }
@@ -9,15 +12,9 @@ body {
   height: 100%;
 }
 
-.add-link {
-  display: block;
-  color: #b95814;
-  opacity: 0.8;
-  text-align: center;
-  padding: 50px 0;
+.add-link:hover {
+  color: #dfae00;
   text-decoration: none;
-  font-size: 30px;
-  font-family: 'Dancing Script', sans-serif;
 }
 
 #cart-logo {
@@ -35,7 +32,7 @@ body {
 }
 
 .header { 
-  height: 450px;
+  height: 350px;
   background-image: url('/header.jpg');
   background-size: auto 100%;
   background-repeat: no-repeat;
@@ -63,7 +60,7 @@ body {
 }   
 
 .logo-nav {
-  height: 70px;
+  height: 90px;
   margin-left: 50px;
   margin-right: 60px;
   display: flex;
@@ -71,18 +68,21 @@ body {
   padding: 10px 10px;   
 }
 
-.navigation ul li {
+.navigation ul li, .navigation-text {
   display: inline-block ;
   padding-top: 0.8em;
-  padding-left: 1em;
+  padding: 15px 10px;
   font-weight: bold;
+  font-size: 17px;
   color: white;
+  text-decoration: none;
 }
 
-.navigation ul li:hover {
-  color: #c9cba3;
+.navigation ul li:hover, .navigation-text:hover {
+  color: #cace84;
   transition: 0.35s ease-in-out;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .header-text h1 {
@@ -150,17 +150,22 @@ body {
   justify-content: center;
 }
 
+.selector div {
+  display: flex;
+  justify-content: space-around;
+}
+
 .selector select {
   border: none; 
   font-weight: bold;
   background-color: transparent;
-  margin: 10px;
-  outline: none;
+  margin: 5px;
+  width: 120px;
 }
 
 .slider-price {
-  font-size: 15px;
-  padding-right: 8px;
+  font-size: 16px;
+  padding: 10px 8px;
 }
 
 .selector {
@@ -175,8 +180,6 @@ body {
 
 .slider {
   -webkit-appearance: none;
-  width: 50%;
-  height: 15px;
   border: solid #cdd1af 1px;;
   border-radius: 10px;  
   background: #ffffff;
@@ -206,14 +209,15 @@ body {
 }
 
 .products-main {
-  margin: 40px 150px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  margin: 20px 90px;
 }
 
 .image {
   text-align: center;   
+  padding: 10px 20px;
 }
 
 .image img {
@@ -268,9 +272,9 @@ body {
 }
 
 .main-footer {
-  padding: 40px 0;
-  background-color:#ffffff;
-  color:#4b4c4d;
+  padding: 50px 0;
+  background-color: #ffffff;
+  color: #4b4c4d;
 }  
 
 .main-footer ul {
@@ -325,4 +329,5 @@ body {
      display: none;
    }
 }
+
 	
