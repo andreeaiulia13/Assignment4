@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dhbjow57v
+  api_key: '588849284864695'
+  api_secret: 8dxu52vy9LUpP3TGyTVsRfoyEBQ
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: dhbjow57v
+  api_key: '588849284864695'
+  api_secret: 8dxu52vy9LUpP3TGyTVsRfoyEBQ
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: dhbjow57v
+  api_key: '588849284864695'
+  api_secret: 8dxu52vy9LUpP3TGyTVsRfoyEBQ
+  enhance_image_tag: true
+  static_file_support: false
