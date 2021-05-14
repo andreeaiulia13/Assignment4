@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
-  get 'carts/show'
+  root 'products#index'
+  
   get 'order_items/create'
   get 'order_items/update'
   get 'order_items/destroy'
-  get 'cart/show'
-  root 'products#index'
 
+  get 'carts/show'
+  get 'cart/show'
+ 
   get 'sessions/new'
   
   resources :products
@@ -15,6 +17,7 @@ Rails.application.routes.draw do
 
   resources :users
   get '/signup', to: 'users#new'
+
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
@@ -27,5 +30,4 @@ Rails.application.routes.draw do
   post 'add_items' => "add_items#create"
   get 'add_items/:id' => "add_items#show", as: "add_item"
   delete 'add_items/:id' => "add_items#destroy"
-
 end

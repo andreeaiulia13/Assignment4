@@ -10,6 +10,4 @@ RSpec.describe "Carts", type: :request do
       end
     end
   end
-  
 end
-

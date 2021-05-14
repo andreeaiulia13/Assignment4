@@ -1,6 +1,6 @@
 class AddItemsController < ApplicationController
 
-	def create
+  def create
     chosen_product = Product.find(params[:product_id])
     current_cart = @current_cart
   
@@ -14,40 +14,43 @@ class AddItemsController < ApplicationController
     end
   
     @add_item.save
+
     redirect_to cart_path(current_cart)
   
-	end
+  end
 
-	def destroy
-		@add_item = AddItem.find(params[:id])
-		@add_item.destroy
-		redirect_to cart_path(@current_cart)
-	end  
+  def destroy
+    @add_item = AddItem.find(params[:id])
+    @add_item.destroy
 
-	def add_quantity
-		@add_item = AddItem.find(params[:id])
-		@add_item.quantity += 1
-		@add_item.save
+    redirect_to cart_path(@current_cart)
+  end  
+
+  def add_quantity
+    @add_item = AddItem.find(params[:id])
+    @add_item.quantity += 1
+    @add_item.save
 		
-		redirect_to cart_path(@current_cart)
+    redirect_to cart_path(@current_cart)
 	end
 	
-	def reduce_quantity
-		@add_item = AddItem.find(params[:id])
-		if @add_item.quantity > 1
-			@add_item.quantity -= 1
-		end
+  def reduce_quantity
+    @add_item = AddItem.find(params[:id])
 		
-		@add_item.save
+    if @add_item.quantity > 1
+      @add_item.quantity -= 1
+    end
 		
-		redirect_to cart_path(@current_cart)
-	end
+    @add_item.save
+		
+    redirect_to cart_path(@current_cart)
+  end
 
-	def total_price
+  def total_price
     self.quantity * self.product.price
   end
 	
-	private
+  private
 
   def add_items_params
     params.require(:add_item).permit(:quantity, :product_id, :cart_id)

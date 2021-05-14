@@ -26,3 +26,4 @@
   %h3#total-shopping-cart TOTAL: $ #{@cart.total}
 
   =link_to 'Empty cart', cart_path(@current_cart), method: :delete, data: {confirm: 'Are you sure?'}, id: 'empty-cart'
+  
