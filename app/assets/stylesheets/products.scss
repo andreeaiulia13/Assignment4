@@ -104,52 +104,6 @@ body {
   opacity: 0.8;   
 }
 
-.form-popup {
-  display: none;
-  position: fixed;
-  bottom: 0;
-  right: 15px;
-  border: 3px solid #f1f1f1;
-  z-index: 9;
-}
-
-.form-container {
-  width: 320px;
-  height: 450px;;
-  padding: 10px;
-  background-color: white;
-}
-
-.form-container h2 {
-  color: #b95814;
-  text-align: center;
-  font-family: 'Dancing Script', cursive;
-  font-size: xx-large;
-}
-
-.form-container hr {
-  opacity: 0.3;
-  color: #b95814;
-}
-
-.form-container button {
-  float: right;
-  border-radius: 50%;
-  color: black;
-  background-color: white ;
-  border: 1px solid black
-}
-
-#total-shopping-cart {
-  position: absolute;
-  color: #b95814;
-  font-size: large;
-  bottom: 15px;
-  right: 130px;;
-  display: flex;
-  justify-content: center;
-}
-
 .selector div {
   display: flex;
   justify-content: space-around;
@@ -259,16 +213,23 @@ body {
   background: #edc531;
   border-radius: 100px;
   padding: 8px 12px;
-  color: #fff;
   text-decoration: none;
   font-size: 15px;
   margin: 0 15px;
   border: none;
+
+  a {
+    color: white;
+  }
 }
 
 .add-button:hover { 
   transition: 0.2s ease-in;
   background: #b95814;
+
+  a {
+    text-decoration: none;
+  }
 }
 
 .main-footer {
