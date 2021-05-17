@@ -1,22 +1,21 @@
 class AddItemsController < ApplicationController
+  before_action :current_cart
 
   def create
     chosen_product = Product.find(params[:product_id])
-    current_cart = @current_cart
   
-    if current_cart.products.include?(chosen_product)
-      @add_item = current_cart.add_items.find_by(:product_id => chosen_product)
+    if @current_cart.products.include?(chosen_product)
+      @add_item = @current_cart.add_items.find_by(:product_id => chosen_product)
       @add_item.quantity += 1
     else
       @add_item = AddItem.new(quantity: 1)
-      @add_item.cart = current_cart
+      @add_item.cart = @current_cart
       @add_item.product = chosen_product
     end
   
     @add_item.save
 
-    redirect_to cart_path(current_cart)
-  
+    redirect_to cart_path(@current_cart)
   end
 
   def destroy
@@ -32,7 +31,7 @@ class AddItemsController < ApplicationController
     @add_item.save
 		
     redirect_to cart_path(@current_cart)
-	end
+  end
 	
   def reduce_quantity
     @add_item = AddItem.find(params[:id])

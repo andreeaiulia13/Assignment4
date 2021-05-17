@@ -1,13 +1,11 @@
 class ApplicationController < ActionController::Base
-	include SessionsHelper
+  include SessionsHelper
 	
-  before_action :current_cart
-
   private
   
   def current_cart
     if session[:cart_id]
-      cart = Cart.find_by(:id => session[:cart_id])
+      cart = Cart.find(session[:cart_id])
      
       if cart.present?
         @current_cart = cart

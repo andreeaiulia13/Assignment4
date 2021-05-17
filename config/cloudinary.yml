@@ -1,19 +1,21 @@
 ---
 development:
-  cloud_name: dhbjow57v
-  api_key: '588849284864695'
-  api_secret: 8dxu52vy9LUpP3TGyTVsRfoyEBQ
+  cloud_name: <%= ENV['CLOUDINARY_CLOUD_NAME'] %>
+  api_key: <%= ENV['CLOUDINARY_API_KEY'] %>
+  api_secret: <%= ENV['CLOUDINARY_API_SECRET'] %>
   enhance_image_tag: true
   static_file_support: false
+
 production:
-  cloud_name: dhbjow57v
-  api_key: '588849284864695'
-  api_secret: 8dxu52vy9LUpP3TGyTVsRfoyEBQ
+  cloud_name: <%= ENV['CLOUDINARY_CLOUD_NAME'] %>
+  api_key: <%= ENV['CLOUDINARY_API_KEY'] %>
+  api_secret: <%= ENV['CLOUDINARY_API_SECRET'] %>
   enhance_image_tag: true
   static_file_support: true
+  
 test:
-  cloud_name: dhbjow57v
-  api_key: '588849284864695'
-  api_secret: 8dxu52vy9LUpP3TGyTVsRfoyEBQ
+  cloud_name: <%= ENV['CLOUDINARY_CLOUD_NAME'] %>
+  api_key: <%= ENV['CLOUDINARY_API_KEY'] %>
+  api_secret: <%= ENV['CLOUDINARY_API_SECRET'] %>
   enhance_image_tag: true
   static_file_support: false

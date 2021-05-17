@@ -22,12 +22,10 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
-  get 'carts/:id' => "carts#show", as: "cart"
-  delete 'carts/:id' => "carts#destroy"
-
-  post 'add_items/:id/add' => "add_items#add_quantity", as: "add_item_add"
-  post 'add_items/:id/reduce' => "add_items#reduce_quantity", as: "add_item_reduce"
-  post 'add_items' => "add_items#create"
-  get 'add_items/:id' => "add_items#show", as: "add_item"
-  delete 'add_items/:id' => "add_items#destroy"
+  resources :carts
+  
+  resources :add_items
+  post 'add_items/:id/add', to: "add_items#add_quantity", as: "add_item_add"
+  post 'add_items/:id/reduce', to: "add_items#reduce_quantity", as: "add_item_reduce"
+  
 end

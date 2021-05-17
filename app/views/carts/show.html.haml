@@ -2,7 +2,7 @@
 
 .cart
   %ul
-    -@cart.add_items.each do |item|
+    -@current_cart.add_items.each do |item|
       .product
         .cart-product-title=item.product.title
         %br
@@ -23,7 +23,7 @@
         =link_to 'Reduce one', add_item_reduce_path(:id => item), method: :post, class: 'cart-options'
         =link_to 'Remove product', add_item_path(item), method: :delete, class: 'cart-options'
 
-  %h3#total-shopping-cart TOTAL: $ #{@cart.total}
+  %h3#total-shopping-cart TOTAL: $ #{@current_cart.total}
 
   =link_to 'Empty cart', cart_path(@current_cart), method: :delete, data: {confirm: 'Are you sure?'}, id: 'empty-cart'
   
