@@ -27,8 +27,9 @@ class AddItemsController < ApplicationController
 
   def add_quantity
     @add_item = AddItem.find(params[:id])
-    @add_item.quantity += 1
-    @add_item.save
+
+    new_quantity = @add_item.quantity + 1
+    @add_item.update(quantity: new_quantity)
 		
     redirect_to cart_path(@current_cart)
   end
@@ -37,12 +38,10 @@ class AddItemsController < ApplicationController
     @add_item = AddItem.find(params[:id])
 		
     if @add_item.quantity > 1
-      @add_item.quantity -= 1
-    end
-		
-    @add_item.save
-		
-    redirect_to cart_path(@current_cart)
+      new_quantity = @add_item.quantity - 1
+      @add_item.update(quantity: new_quantity)
+      redirect_to cart_path(@current_cart)
+    end    
   end
 
   def total_price

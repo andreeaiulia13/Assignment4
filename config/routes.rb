@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   resources :carts
   
   resources :add_items
-  post 'add_items/:id/add', to: "add_items#add_quantity", as: "add_item_add"
-  post 'add_items/:id/reduce', to: "add_items#reduce_quantity", as: "add_item_reduce"
+  patch 'add_items/:id/add', to: "add_items#add_quantity", as: "add_item_add"
+  patch 'add_items/:id/reduce', to: "add_items#reduce_quantity", as: "add_item_reduce"
   
 end

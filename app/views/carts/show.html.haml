@@ -19,8 +19,8 @@
         Total Price: #{item.total_price}
         %br
         
-        =link_to 'Add one', add_item_add_path(:id => item), method: :post, class: 'cart-options'
-        =link_to 'Reduce one', add_item_reduce_path(:id => item), method: :post, class: 'cart-options'
+        =link_to 'Add one', add_item_add_path(:id => item), method: :patch, class: 'cart-options'
+        =link_to 'Reduce one', add_item_reduce_path(:id => item), method: :patch, class: 'cart-options'
         =link_to 'Remove product', add_item_path(item), method: :delete, class: 'cart-options'
 
   %h3#total-shopping-cart TOTAL: $ #{@current_cart.total}
