@@ -7,7 +7,7 @@
         .cart-product-title=item.product.title
         %br
 
-        =image_tag item.product.image, class: 'cart-image'
+        =cl_image_tag item.product.image.key, class: 'cart-image'
         %br
 
         Price: $#{item.product.price}

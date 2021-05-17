@@ -16,7 +16,7 @@
 %main.products-main
   - @products.each do |product|
     .image
-      =image_tag product.image
+      =cl_image_tag product.image.key
       .food-name= product.title
       .food-type= product.description
       .food-price= '$ ' + product.price.to_s 
