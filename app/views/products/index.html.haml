@@ -8,9 +8,9 @@
       %option{:value => 'vegetarian'} VEGETARIAN
       
   %div
-    %label.slider-price{:for => 'slider'} Price:
+    %label.slider-price{ for: 'slider' } Price:
     .slider-price $9
-    %input.slider{:max => '100', :min => '15', :name => 'price', :type => 'range'}
+    %input.slider{ max: '100', min: '15', name: 'price', type: 'range' }
     .slider-price $50
         
 %main.products-main
@@ -21,5 +21,4 @@
       .food-type= product.description
       .food-price= '$ ' + product.price.to_s 
       .add-button
-        %a=link_to  'ADD TO CART', add_items_path(:product_id => product.id), method: :post
-       
+        %a=link_to  'ADD TO CART', add_items_path(product_id: product.id), method: :post

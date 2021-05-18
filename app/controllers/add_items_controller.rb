@@ -5,10 +5,11 @@ class AddItemsController < ApplicationController
     chosen_product = Product.find(params[:product_id])
   
     if @current_cart.products.include?(chosen_product)
-      @add_item = @current_cart.add_items.find_by(:product_id => chosen_product)
+      @add_item = @current_cart.add_items.find_by(product_id: chosen_product)
       @add_item.quantity += 1
+
     else
-      @add_item = AddItem.new(quantity: 1)
+      @add_item = AddItem.new
       @add_item.cart = @current_cart
       @add_item.product = chosen_product
     end
@@ -40,6 +41,7 @@ class AddItemsController < ApplicationController
     if @add_item.quantity > 1
       new_quantity = @add_item.quantity - 1
       @add_item.update(quantity: new_quantity)
+
       redirect_to cart_path(@current_cart)
     end    
   end
