@@ -19,6 +19,6 @@
       =cl_image_tag product.image.key
       .food-name= product.title
       .food-type= product.description
-      .food-price= '$ ' + product.price.to_s 
+      .food-price= "$#{product.price.to_s}" 
       .add-button
-        %a=link_to  'ADD TO CART', add_items_path(product_id: product.id), method: :post
+        %a=link_to  'ADD TO CART', cart_items_path(product_id: product.id), method: :post

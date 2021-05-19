@@ -9,7 +9,7 @@
   = @product.description
  
   %span Price:
-  = @product.price.to_s + '$'
+  = "$#{@product.price.to_s}" 
 
   = cl_image_tag @product.image.key, width: '400px', height: '400px', class: 'show-image'
 

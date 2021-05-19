@@ -2,7 +2,7 @@
 
 .cart
   %ul
-    -@current_cart.add_items.each do |item|
+    -@current_cart.cart_items.each do |item|
       .product
         .cart-product-title=item.product.title
         %br
@@ -19,10 +19,10 @@
         Total Price: #{item.total_price}
         %br
         
-        =link_to 'Add one', add_quantity_add_item_path(id: item), method: :patch, class: 'cart-options'
-        =link_to 'Reduce one', reduce_quantity_add_item_path(id: item), method: :patch, class: 'cart-options'
-        =link_to 'Remove product', add_item_path(item), method: :delete, class: 'cart-options'
+        =link_to 'Add one', add_quantity_cart_item_path(id: item), method: :patch, class: 'cart-options'
+        =link_to 'Reduce one', reduce_quantity_cart_item_path(id: item), method: :patch, class: 'cart-options'
+        =link_to 'Remove product', cart_item_path(item), method: :delete, class: 'cart-options'
 
-  %h3#total-shopping-cart TOTAL: $ #{@current_cart.total}
+  %h3#total-shopping-cart TOTAL: $#{@current_cart.total}
 
   =link_to 'Empty cart', cart_path(@current_cart), method: :delete, data: {confirm: 'Are you sure?'}, id: 'empty-cart'

@@ -15,7 +15,7 @@
         %tr
           %td= product.title
           %td= product.description
-          %td= product.price.to_s + ' $'
+          %td= "$#{product.price.to_s}"
               
           -if product.image.attached?
             %td= cl_image_tag product.image.key, width: '100px', height: '100px', class: 'show-image'

@@ -24,7 +24,7 @@ Rails.application.routes.draw do
 
   resources :carts
   
-  resources :add_items do 
+  resources :cart_items do 
     patch :add_quantity, on: :member
     patch :reduce_quantity, on: :member
   end
