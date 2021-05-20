@@ -1,5 +1,5 @@
 require 'rails_helper'
-
+include Warden::Test::Helpers
 RSpec.describe "Carts", type: :request do
   
   describe 'GET/carts/show' do 

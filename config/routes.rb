@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'password_resets/new'
+  get 'password_resets/edit'
   root 'products#index'
   
   get 'order_items/create'
@@ -28,4 +30,8 @@ Rails.application.routes.draw do
     patch :add_quantity, on: :member
     patch :reduce_quantity, on: :member
   end
+
+  resources :account_activations, only: [:edit]
+
+  resources :password_resets, only: [:new, :create, :edit, :update]
 end
