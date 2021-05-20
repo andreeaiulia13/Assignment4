@@ -16,11 +16,14 @@ gem 'webpacker',                  '5.2.1'
 gem 'turbolinks',                 '5.2.1'
 gem 'jbuilder',                   '2.10.0'
 gem 'haml-rails',                 '2.0.1'
+gem 'cloudinary',                 '1.20'
+gem 'dotenv-rails',               '~> 2.1', '>= 2.1.1'
 gem 'bootsnap',                   '1.7.2', require: false
 
 group :development, :test do
   gem 'sqlite3', '1.4.2'
   gem 'byebug',  '11.1.3', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails', '~> 5.0.0'
 end
 
 group :development do
