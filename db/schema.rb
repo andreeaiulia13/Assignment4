@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 2021_05_19_114319) do
     t.boolean "activated", default: false
     t.datetime "activated_at"
     t.string "reset_digest"
-    t.time "reset_sent_at"
+    t.datetime "reset_sent_at"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
