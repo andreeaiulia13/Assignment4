@@ -29,7 +29,7 @@ Rails.application.routes.draw do
     patch :reduce_quantity, on: :member
   end
 
-  resources :account_activations, only: [:edit]
+  resources :account_activations, only: :edit
 
   resources :password_resets, only: %i[new create edit update]
 end

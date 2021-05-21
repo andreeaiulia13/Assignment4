@@ -34,10 +34,10 @@
 .cart-options {
   color: #b95814;
   margin-right: 10px;	
-}
 
-.cart-options:hover {
-  color: #238826;
+  &:hover {
+    color: #238826;
+  }
 }
 
 #empty-cart {
