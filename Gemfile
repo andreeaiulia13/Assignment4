@@ -18,12 +18,14 @@ gem 'jbuilder',                   '2.10.0'
 gem 'haml-rails',                 '2.0.1'
 gem 'cloudinary',                 '1.20'
 gem 'dotenv-rails',               '~> 2.1', '>= 2.1.1'
+gem 'database_cleaner',           '~> 2.0', '>= 2.0.1'
 gem 'bootsnap',                   '1.7.2', require: false
 
 group :development, :test do
   gem 'sqlite3', '1.4.2'
   gem 'byebug',  '11.1.3', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 5.0.0'
+  gem 'factory_bot_rails',        '~> 6.2', require: false
 end
 
 group :development do
@@ -38,11 +40,11 @@ group :test do
   gem 'selenium-webdriver',       '3.142.7'
   gem 'webdrivers',               '4.6.0'
   gem 'rails-controller-testing', '1.0.5'
-  gem 'minitest',                 '5.11.3'
   gem 'minitest-reporters',       '1.3.8'
   gem 'guard',                    '2.16.2'
   gem 'guard-minitest',           '2.4.6'
   gem 'rexml',                    '3.2.5'
+  gem 'database_cleaner-active_record', '~> 2.0', '>= 2.0.1'
 end
 
 group :production do
