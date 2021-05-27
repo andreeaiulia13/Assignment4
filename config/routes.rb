@@ -28,4 +28,8 @@ Rails.application.routes.draw do
     patch :add_quantity, on: :member
     patch :reduce_quantity, on: :member
   end
+
+  resources :account_activations, only: :edit
+
+  resources :password_resets, only: %i[new create edit update]
 end

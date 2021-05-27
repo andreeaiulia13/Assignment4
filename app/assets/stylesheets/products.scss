@@ -25,10 +25,10 @@ body {
   background-size: auto 100%;
   border-radius: 10%;
   background-size: cover;
-}
 
-#cart-button:hover {
-  background-color: #edc531;
+  &:hover {
+    background-color: #edc531;
+  }
 }
 
 .header { 
@@ -76,45 +76,32 @@ body {
   font-size: 17px;
   color: white;
   text-decoration: none;
-}
 
-.navigation ul li:hover, .navigation-text:hover {
-  color: #cace84;
-  transition: 0.35s ease-in-out;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.header-text h1 {
-  text-align: center;
-  color: white;
-  font-weight: bold;
-  font-size: 60px;
+  &:hover {
+    color: #cace84;
+    transition: 0.35s ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+  }
 }
 
 .header-text {
   justify-content: center;
   color: white;   
-}
+  
+  h1 {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 60px;
+  }
 
-.header-text p {
-  font-size: 40px;
-  text-align: center;
-  font-family: 'Dancing Script', cursive;
-  opacity: 0.8;   
-}
-
-.selector div {
-  display: flex;
-  justify-content: space-around;
-}
-
-.selector select {
-  border: none; 
-  font-weight: bold;
-  background-color: transparent;
-  margin: 5px;
-  width: 120px;
+  p {
+    font-size: 40px;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    opacity: 0.8;  
+  }
 }
 
 .slider-price {
@@ -130,6 +117,19 @@ body {
   background-color: #f6f7f1;
   font-size: 15px;
   border: 1px solid #d7dabf;
+  
+  div {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  select {
+    border: none; 
+    font-weight: bold;
+    background-color: transparent;
+    margin: 5px;
+    width: 120px;
+  }
 }
 
 .slider {
@@ -172,14 +172,23 @@ body {
 .image {
   text-align: center;   
   padding: 10px 20px;
-}
 
-.image img {
-  width:  290px;
-  height: 350px;
-  object-fit: cover; 
-  margin: 4px;
-  margin-top:20px;
+  img {
+    width:  290px;
+    height: 350px;
+    object-fit: cover; 
+    margin: 4px;
+    margin-top:20px;
+    transition: 0.8s ease-in;
+
+    &:hover {
+      -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+      transform: scale(1.1);
+      transition: 0.8s ease-in;
+      border-radius: 10%
+    }
+  } 
 }
 
 .food-name {
@@ -197,18 +206,6 @@ body {
   font-size: small;
 }
 
-.image img {
-  transition: 0.8s ease-in;
-}
-
-.image img:hover {
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  transform: scale(1.1);
-  transition: 0.8s ease-in;
-  border-radius: 10%
-}
-
 .add-button {
   background: #edc531;
   border-radius: 100px;
@@ -220,13 +217,13 @@ body {
   a {
     color: white;
   }
-}
 
-.add-button:hover { 
-  transition: 0.2s ease-in;
-  background: #b95814;
-  a {
-    text-decoration: none;
+  &:hover {
+    transition: 0.2s ease-in;
+    background: #b95814;
+    a {
+      text-decoration: none;
+    }
   }
 }
 
@@ -234,31 +231,31 @@ body {
   padding: 50px 0;
   background-color: #ffffff;
   color: #4b4c4d;
-}  
+  
+  ul {
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0; 
 
-.main-footer ul {
-  padding: 0;
-  list-style: none;
-  text-align: center;
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 0; 
-}
-	 
-.main-footer li {
-  padding: 0 10px;
-  display: inline;
-} 
-		
-.main-footer ul a {
-  color: inherit;
-  text-decoration: none;
-  opacity: 0.4;
-}  
+    a {
+      color: inherit;
+      text-decoration: none;
+      opacity: 0.4;
 
-.main-footer ul a:hover {
-  opacity: 1;
-  color: #926c15;
+      &:hover {
+        opacity: 1;
+        color: #926c15;
+      }
+    }
+  }
+
+  li {
+    padding: 0 10px;
+    display: inline;
+  }
 }  
 
 .main-footer .copy-right {
@@ -288,5 +285,3 @@ body {
      display: none;
    }
 }
-
-	

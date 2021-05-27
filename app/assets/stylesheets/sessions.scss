@@ -1,5 +1,6 @@
 .checkbox {
   margin-bottom: 20px;
+  
   span {
     margin-left: 20px;
     font-weight: normal;
@@ -9,4 +10,18 @@
 #session_remember_me {
   width: auto;
   margin-left: 0;
+}
+
+.header-reset {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.forgot-password {
+  color: green;
+
+  &:hover {
+    color: #b95814
+  }
 }
