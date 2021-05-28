@@ -59,10 +59,12 @@ ActiveRecord::Schema.define(version: 2021_05_27_170958) do
 
   create_table "order_items", force: :cascade do |t|
     t.integer "quantity"
-    t.integer "product_id"
     t.integer "order_id"
+    t.integer "product_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["order_id"], name: "index_order_items_on_order_id"
+    t.index ["product_id"], name: "index_order_items_on_product_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -96,7 +98,6 @@ ActiveRecord::Schema.define(version: 2021_05_27_170958) do
     t.datetime "activated_at"
     t.string "reset_digest"
     t.datetime "reset_sent_at"
-    t.integer "order_id"
     t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
   end

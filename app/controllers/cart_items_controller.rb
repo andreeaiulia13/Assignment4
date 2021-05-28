@@ -4,25 +4,29 @@ class CartItemsController < ApplicationController
   def new
     @cart_item = CartItem.new
   end
-  
+
   def create
     chosen_product = Product.find(params[:product_id])
+    if logged_in?
+      if @current_cart.products.include?(chosen_product)
+        @cart_item = @current_cart.cart_items.find_by(product_id: chosen_product)
+        @cart_item.quantity += 1
+      else
+        @cart_item = CartItem.new
+        @cart_item.cart = @current_cart
+        @cart_item.product = chosen_product
+      end
+      @cart_item.save
   
-    if @current_cart.products.include?(chosen_product)
-      @cart_item = @current_cart.cart_items.find_by(product_id: chosen_product)
-      @cart_item.quantity += 1
-    else
-      @cart_item = CartItem.new
-      @cart_item.cart = @current_cart
-      @cart_item.product = chosen_product
+      if @cart_item.save
+        flash[:success] = "Product successfully added to the cart"
+      end
+      redirect_to root_path
+    else 
+      redirect_to login_path
     end
   
-    @cart_item.save
-  
-    if @cart_item.save
-      flash[:success] = "Product successfully added to the cart"
-    end
-    redirect_to root_path
+    
   end
 
   def destroy
