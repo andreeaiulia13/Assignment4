@@ -1,6 +1,10 @@
 class CartItemsController < ApplicationController
   before_action :current_cart
 
+  def new
+    @cart_item = CartItem.new
+  end
+  
   def create
     chosen_product = Product.find(params[:product_id])
   
@@ -14,8 +18,11 @@ class CartItemsController < ApplicationController
     end
   
     @cart_item.save
-
-    redirect_to cart_path(@current_cart)
+  
+    if @cart_item.save
+      flash[:success] = "Product successfully added to the cart"
+    end
+    redirect_to root_path
   end
 
   def destroy

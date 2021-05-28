@@ -20,6 +20,12 @@ input {
   background-color: #b95814; 
   color: white;
   padding: 15px 0px;
+  border-radius: 3%;
+
+  &:hover {
+    background-color: #238826;
+    transition: 0.35s ease-in-out;
+  }
 }
 
 .submit-user-btn:active {

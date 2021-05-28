@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'orders/index'
+  get 'orders/show'
+  get 'orders/new'
   root 'products#index'
   
   get 'order_items/create'
@@ -24,6 +27,12 @@ Rails.application.routes.draw do
 
   resources :carts
   
+  resources :orders do
+    patch :deliver, on: :member
+  end
+
+  post 'add_order', to: 'orders#create'
+
   resources :cart_items do 
     patch :add_quantity, on: :member
     patch :reduce_quantity, on: :member

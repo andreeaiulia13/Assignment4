@@ -1,5 +1,5 @@
 #cart-title {
-  margin: 70px 0 50px 50px;
+  margin: 70px 0 50px 25px;
   color: #6e3105;
   text-align: center;
 }
@@ -7,6 +7,9 @@
 .cart {
   text-align: center;
   font-size: 18px;
+  display: flex;
+  vertical-align:top;
+
 }
 
 .cart-image {
@@ -44,3 +47,15 @@
   color: red;
   margin-left: 25px;
 }
+
+.split {
+  margin: 20px 110px;
+}
+.right {
+  margin: 20 px 100px;
+  padding: 0 70px;
+  position: sticky;
+  top: 150px;
+  bottom: 0;
+}
+

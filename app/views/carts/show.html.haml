@@ -1,28 +1,42 @@
 %h2#cart-title FOOD ORDER CART
 
 .cart
-  %ul
-    -@current_cart.cart_items.each do |item|
-      .product
-        .cart-product-title=item.product.title
-        %br
+  .split.left 
+    %ul
+      -@current_cart.cart_items.each do |item|
+        .product
+          .cart-product-title=item.product.title
+          %br
 
-        =cl_image_tag item.product.image.key, class: 'cart-image'
-        %br
+          =cl_image_tag item.product.image.key, class: 'cart-image'
+          %br
 
-        Price: $#{item.product.price}
-        %br
+          Price: $#{item.product.price}
+          %br
 
-        Quantity: #{item.quantity}
-        %br
+          Quantity: #{item.quantity}
+          %br
 
-        Total Price: #{item.total_price}
-        %br
+          Total Price: #{item.total_price}
+          %br
+          
+          =link_to 'Add one', add_quantity_cart_item_path(id: item), method: :patch, class: 'cart-options'
+          =link_to 'Reduce one', reduce_quantity_cart_item_path(id: item), method: :patch, class: 'cart-options'
+          =link_to 'Remove product', cart_item_path(item), method: :delete, class: 'cart-options'
         
-        =link_to 'Add one', add_quantity_cart_item_path(id: item), method: :patch, class: 'cart-options'
-        =link_to 'Reduce one', reduce_quantity_cart_item_path(id: item), method: :patch, class: 'cart-options'
-        =link_to 'Remove product', cart_item_path(item), method: :delete, class: 'cart-options'
+    %h3#total-shopping-cart TOTAL: $#{@current_cart.total}
+    
+    =link_to 'Empty cart', cart_path(@current_cart), method: :delete, data: {confirm: 'Are you sure?'}, id: 'empty-cart'
+  .split.right 
+    =form_with(url: add_order_path, scope: :order, local: true) do |form|
 
-  %h3#total-shopping-cart TOTAL: $#{@current_cart.total}
+      =form.label :name
+      =form.text_field :name
+        
+      =form.label :email
+      =form.text_field :email
+      
+      =form.label :address
+      =form.text_area :address
 
-  =link_to 'Empty cart', cart_path(@current_cart), method: :delete, data: {confirm: 'Are you sure?'}, id: 'empty-cart'
+      =form.submit 'Submit Order', class: 'submit-user-btn' 
