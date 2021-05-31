@@ -18,7 +18,7 @@
   %br
   TOTAL: $#{order.total}
   
-	-if order.handled?
+  -if order.handled?
     .one Order status: DELIVERED 
   -else 
     .two Order status: PROCESSING
