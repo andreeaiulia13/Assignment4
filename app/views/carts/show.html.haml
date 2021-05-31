@@ -27,6 +27,7 @@
     %h3#total-shopping-cart TOTAL: $#{@current_cart.total}
     
     =link_to 'Empty cart', cart_path(@current_cart), method: :delete, data: {confirm: 'Are you sure?'}, id: 'empty-cart'
+  
   .split.right 
     =form_with(url: add_order_path, scope: :order, local: true) do |form|
 

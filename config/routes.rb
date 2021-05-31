@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get 'orders/index'
-  get 'orders/show'
-  get 'orders/new'
   root 'products#index'
   
   get 'order_items/create'
@@ -26,11 +23,12 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   resources :carts
-  
+
   resources :orders do
     patch :deliver, on: :member
   end
-
+  
+  get 'orders/show'
   post 'add_order', to: 'orders#create'
 
   resources :cart_items do 

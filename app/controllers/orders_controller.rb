@@ -24,14 +24,16 @@ class OrdersController < ApplicationController
       @order_item.order_id = @order.id
       @order_item.save
     end
+    
     @current_cart.destroy
     
     redirect_to @order, notice: 'Order was successfully created.'
+  
   rescue ActiveRecord::ActiveRecordError 
     flash[:danger] = @order.errors.full_messages.to_sentence
+    
     redirect_to carts_show_path
   end
-
 
   def deliver
     @order = Order.find(params[:id])
@@ -39,6 +41,7 @@ class OrdersController < ApplicationController
 
     redirect_to orders_path
   end
+  
   private
   
     def order_params

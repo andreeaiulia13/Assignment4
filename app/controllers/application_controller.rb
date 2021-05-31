@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   private
   
   def current_cart 
-    if current_user.present?
+    if logged_in?
       if(Cart.find_by(user_id: current_user.id))
         cart = Cart.find_by(user_id: current_user.id)
         @current_cart = cart

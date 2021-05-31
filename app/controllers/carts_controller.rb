@@ -6,7 +6,9 @@ class CartsController < ApplicationController
   end
   
   def show
-    @current_cart 
+    redirect_to login_path unless @current_cart
+    
+    @current_cart
   end
 
   def destroy

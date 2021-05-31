@@ -10,6 +10,7 @@
         ="Quantity: #{item.quantity}, "
         ="Total price: #{item.total_price}"
         %br
+      
       ="Date and Time: #{order.created_at}"
       %br
       TOTAL: $#{order.total}
@@ -19,5 +20,3 @@
         .one Order status: DELIVERED 
       -else 
         .two Order status: PROCESSING
-
-     
