@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   private
   
   def current_cart 
-    if current_user
+    if current_user.present?
       if(Cart.find_by(user_id: current_user.id))
         cart = Cart.find_by(user_id: current_user.id)
         @current_cart = cart
@@ -12,8 +12,6 @@ class ApplicationController < ActionController::Base
         cart = Cart.create(user_id: current_user.id)
         @current_cart = cart
       end
-    else 
-      redirect_to login_path
     end
   end
 end
