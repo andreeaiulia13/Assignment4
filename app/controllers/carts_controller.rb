@@ -6,11 +6,7 @@ class CartsController < ApplicationController
   end
   
   def show
-    if logged_in?
-      @current_cart 
-    else 
-      redirect_to login_path
-    end
+    @current_cart 
   end
 
   def destroy

@@ -12,6 +12,8 @@ class ApplicationController < ActionController::Base
         cart = Cart.create(user_id: current_user.id)
         @current_cart = cart
       end
+    else 
+      redirect_to login_path
     end
   end
 end
