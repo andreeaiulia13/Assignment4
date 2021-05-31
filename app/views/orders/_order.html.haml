@@ -16,9 +16,9 @@
     ="Quantity: #{item.quantity}, "
     ="Total price: $#{item.total_price}"
   %br
-  
   TOTAL: $#{order.total}
-  -if order.handled?
+  
+	-if order.handled?
     .one Order status: DELIVERED 
   -else 
     .two Order status: PROCESSING
@@ -26,4 +26,3 @@
   -unless order.handled?
     .btn
       =button_to 'Deliver', deliver_order_path(id: order.id), method: :patch, data: { confirm: 'Are you sure?'}, class: 'btn btn-primary'
-			
