@@ -20,7 +20,7 @@
               -if current_user.admin?
                 %li=link_to 'Edit products', dashboard_path
                 %li=link_to 'Edit orders', orders_path
-              %li=link_to 'My orders', "orders/show"
+              %li=link_to 'My orders', orders_show_path
               %li=link_to 'Settings', '#'
               %li=link_to 'Log out', logout_path, method: :delete
           

@@ -2,9 +2,8 @@
   %h1 My orders:
 %br
 
--my_order = Order.where(user_id: current_user.id)
 .list-group
-  -my_order.each do |order|
+  -@order.each do |order|
     .list-group-item.orders
       -order.order_items.each do |item|
         ="Dish name: #{item.product.title}, "
