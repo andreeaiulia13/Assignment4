@@ -8,7 +8,11 @@ class ProductsController < ApplicationController
   def show; end
 
   def dashboard
-    @products = Product.all
+    if current_user.admin?
+      @products = Product.all 
+    else 
+      redirect_to root_path
+    end
   end
 
   def new

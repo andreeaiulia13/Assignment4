@@ -1,18 +1,19 @@
 class CartsController < ApplicationController  
   before_action :current_cart
 
+  def new
+    @cart = Cart.new
+  end
+  
   def show
-    if logged_in?
-      @current_cart 
-    else 
-      redirect_to login_path
-    end
+    redirect_to login_path unless @current_cart
+    
+    @current_cart
   end
 
   def destroy
     @current_cart.destroy
-    session[:cart_id] = nil
-
+    
     redirect_to root_path
   end
 end

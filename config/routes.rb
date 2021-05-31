@@ -23,7 +23,14 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   resources :carts
+
+  resources :orders do
+    patch :deliver, on: :member
+  end
   
+  get 'orders/show'
+  post 'add_order', to: 'orders#create'
+
   resources :cart_items do 
     patch :add_quantity, on: :member
     patch :reduce_quantity, on: :member

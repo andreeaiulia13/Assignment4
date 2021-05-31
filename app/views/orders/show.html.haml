@@ -1,0 +1,22 @@
+.dashboard-header
+  %h1 My orders:
+%br
+
+.list-group
+  -@order.each do |order|
+    .list-group-item.orders
+      -order.order_items.each do |item|
+        ="Dish name: #{item.product.title}, "
+        ="Quantity: #{item.quantity}, "
+        ="Total price: #{item.total_price}"
+        %br
+      
+      ="Date and Time: #{order.created_at}"
+      %br
+      TOTAL: $#{order.total}
+      %br
+      %br
+      -if order.handled?
+        .one Order status: DELIVERED 
+      -else 
+        .two Order status: PROCESSING
